@@ -6,3 +6,5 @@ dotnet ef migrations Add Inicio : First Migration
 dotnet ef database update : To Push That Migration
 git init : Initialize
 git remote add origin https://github.com/lscarloscelis/DatingApp.git : GitHub Repo
+git rm .DS_Store : To Delete Files
+git rm mySheet
