@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { user } from '../_models/fotos/user';
 
 @Component({
   selector: 'app-matches',
@@ -7,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MatchesComponent implements OnInit {
 
+  usuarios: user[] = [{
+    name: '',
+    url: ''
+  }];
   constructor() { }
 
   ngOnInit() {

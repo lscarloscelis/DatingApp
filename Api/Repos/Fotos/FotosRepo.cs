@@ -24,6 +24,11 @@ namespace Api.Repos.Fotos
             return datingAppDbContext.Fotos.Where(x => x.Usuario == usuario);
         }
 
+        public Foto GetMainFoto(Usuario usuario)
+        {
+            return datingAppDbContext.Fotos.FirstOrDefault(x => x.EsPerfil == true && x.Usuario == usuario);
+        }
+
         public Usuario GetUsuario(string document)
         {
             return datingAppDbContext.Usuarios.FirstOrDefault(x => x.Document == document);

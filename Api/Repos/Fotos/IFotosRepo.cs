@@ -8,5 +8,6 @@ namespace Api.Repos.Fotos
         Usuario GetUsuario(string document);
         void AddFoto(Foto foto);
         IEnumerable<Foto> GetFotoByUser(Usuario usuario);
+        Foto GetMainFoto(Usuario usuario);
     }
 }

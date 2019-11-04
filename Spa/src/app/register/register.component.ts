@@ -22,9 +22,12 @@ export class RegisterComponent implements OnInit {
     ciudad: '',
     pais: ''
   };
+
   constructor(private myService: AuthService) { }
+  
 
   ngOnInit() {
+    
   }
 
   register(myForm: NgForm){
@@ -35,3 +38,4 @@ export class RegisterComponent implements OnInit {
     );
   }
 }
+

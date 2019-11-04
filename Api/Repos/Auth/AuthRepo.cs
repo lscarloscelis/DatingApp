@@ -93,6 +93,16 @@ namespace Api.Repos.Auth
             };
             datingAppDbContext.Usuarios.Add(usuario);
             datingAppDbContext.SaveChanges();
+            Foto userDefaultfoto = new Foto(){
+                Url = "https://res.cloudinary.com/lscarloscelis/image/upload/v1572902729/qnar4imeu0wfqm3opjx7.jpg",
+                Descripcion = "Foto Por Defecto",
+                Agregada = DateTime.Now,
+                EsPerfil = true,
+                PublicId = "qnar4imeu0wfqm3opjx7",
+                Usuario = usuario
+            };
+            datingAppDbContext.Fotos.Add(userDefaultfoto);
+            datingAppDbContext.SaveChanges();
             return true;
         }
 

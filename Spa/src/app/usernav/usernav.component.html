@@ -12,8 +12,10 @@
     <a class="p-2 text-dark" [routerLink]="['/listas']" routerLinkActive="active" 
         style="font: small-caps 120%/200% serif; cursor: pointer;">Listas</a>
     <a class="p-2 text-dark" [routerLink]="['/matches']" routerLinkActive="active" 
-        style="font: small-caps 120%/200% serif; cursor: pointer;">Matches</a>
+        style="font: small-caps 120%/200% serif; cursor: pointer;">Usuarios</a>
     </nav>
+    <button style="font: small-caps 120%/200% serif;"
+        class="btn btn-lg btn-primary mr-2" (click)="editar()">Editar Perfil</button>
     <button style="font: small-caps 120%/200% serif;"
         class="btn btn-lg btn-primary" (click)="cerrar()">Cerrar Sesion</button>
         

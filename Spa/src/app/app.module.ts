@@ -13,6 +13,7 @@ import { UserhomeComponent } from './userhome/userhome.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { FileUploadModule } from 'ng2-file-upload';
 
 import { appRoutes } from '../routes';
 import { MensajesComponent } from './mensajes/mensajes.component';
@@ -37,7 +38,8 @@ import { MatchesComponent } from './matches/matches.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FileUploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

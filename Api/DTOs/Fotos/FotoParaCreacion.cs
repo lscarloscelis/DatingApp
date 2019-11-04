@@ -10,5 +10,6 @@ namespace Api.DTOs.Fotos
         public string Descripcion { get; set; }
         public string PublicId { get; set; }
         public DateTime Agregado { get; set; }
+        public bool EsPerfil { get; set; }
     }
 }

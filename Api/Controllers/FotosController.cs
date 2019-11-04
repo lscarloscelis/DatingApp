@@ -31,6 +31,21 @@ namespace Api.Controllers
             myCloudinary = new Cloudinary(cloduAccount);
         }
 
+        [HttpGet]
+        public IActionResult Get(string usuarioDocument)
+        {
+            var usrDb = fotosRepo.GetUsuario(usuarioDocument);
+            var mainFoto = fotosRepo.GetMainFoto(usrDb);
+            FotoParaVista fotoParaVista = new FotoParaVista()
+            {
+                Url = mainFoto.Url,
+                Descripcion = mainFoto.Descripcion,
+                PublicId = mainFoto.PublicId,
+                EsPerfil = mainFoto.EsPerfil
+            };
+            return Ok(fotoParaVista);
+        }
+
         [HttpGet("{id}")]
         public IActionResult GetFotos(string id)
         {

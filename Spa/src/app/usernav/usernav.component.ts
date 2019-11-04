@@ -18,4 +18,8 @@ export class UsernavComponent implements OnInit {
     this.myRouter.navigate(['/home']);
   }
 
+  editar() {
+    this.myRouter.navigate(['/userhome']);
+  }
+
 }

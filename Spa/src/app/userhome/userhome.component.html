@@ -1,1 +1,70 @@
 <app-usernav></app-usernav>
+<div class="jumbtron">
+    <h1 class="display-4 text-center"
+    style="font: small-caps 180%/200% serif;"> Usuario: {{ currentUser }}</h1>
+    <hr>
+    <div class="row">
+      <div class="col-md-5">
+        <h3 style="font: small-caps 160%/200% serif; margin-left: 10px;">Perfil</h3>
+        <div class="card" style="width: 18rem; margin-left: 10px;">
+            <img src="{{ mainUrl }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p style="font: small-caps 120%/200% serif;" class="card-text">{{ description }}</p>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-4" style="margin-bottom: 40px">   
+              <h3 style="font: small-caps 160%/200% serif;">Select files</h3>    
+              <div ng2FileDrop
+                   [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+                   (fileOver)="fileOverBase($event)"
+                   [uploader]="uploader"
+                   class="card bg-faded p-3 text-center mb-3 my-drop-zone">
+                  Drag Photo
+              </div>
+              <input type="file" ng2FileSelect [uploader]="uploader" /><br/>
+          </div>
+          <div class="col-md-9" style="margin-bottom: 40px">
+        
+              <h3 style="font: small-caps 160%/200% serif;">Progreso</h3>
+              <p>Archivos: {{ uploader?.queue?.length }}</p>
+        
+              <table class="table">
+                  <thead>
+                  <tr>
+                      <th width="50%">Nombre</th>
+                      <th>Tamaño</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let item of uploader.queue">
+                      <td><strong>{{ item?.file?.name }}</strong></td>
+                      <td *ngIf="uploader.options.isHTML5" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>
+                  </tr>
+                  </tbody>
+              </table>
+        
+              <div>
+                  <div>
+                      Progreso Carga                  
+                      <div class="progress">
+                          <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+                      </div>
+                      <br/>
+                  </div>
+                  <button type="button" class="btn btn-success btn-s mr-2"
+                          (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+                      <span class="glyphicon glyphicon-upload"></span> <i class="fa fa-upload"></i>
+                  </button>
+                  <button type="button" class="btn btn-danger btn-s"
+                          (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
+                      <span class="glyphicon glyphicon-trash"></span><i class="fa fa-trash"></i>
+                  </button>
+              </div>   
+          </div> 
+        </div>
+      </div>
+    </div>
+</div>
