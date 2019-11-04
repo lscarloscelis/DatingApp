@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Api.Data;
-using Api.Helper;
+using Api.Helpers;
 using Api.Repos.Auth;
+using Api.Repos.Fotos;
 using Api.Repos.Values;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -36,8 +37,10 @@ namespace Api
                 Configuration.GetConnectionString("DatingAppDb")));
             services.AddScoped<IValuesRepo, ValuesRepo>();
             services.AddScoped<IAuthRepo, AuthRepo>();
+            services.AddScoped<IFotosRepo, FotosRepo>();
             services.AddCors();
-            services.Configure<Cloudinary>(Configuration.GetSection("Cloudinary")); /* Map JSON To Helper Class */
+            services.Configure<CloudinaryCreds>(Configuration.
+                GetSection("Cloudinary")); /* Map JSON To Helper Class */
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).
                 AddJwtBearer(x => x.TokenValidationParameters = new TokenValidationParameters{
                     ValidateIssuerSigningKey = true,

@@ -1,6 +1,6 @@
-namespace Api.Helper
+namespace Api.Helpers
 {
-    public class Cloudinary
+    public class CloudinaryCreds
     {
         public string Name { get; set; }
         public string Key { get; set; }

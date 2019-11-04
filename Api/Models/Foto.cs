@@ -9,6 +9,7 @@ namespace Api.Models
         public string Descripcion { get; set; }
         public DateTime Agregada { get; set; }
         public bool EsPerfil { get; set; }
+        public string PublicId { get; set; } /* Cloudinary Returns */
         public Usuario Usuario { get; set; }
     }
 }

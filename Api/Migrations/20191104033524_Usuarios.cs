@@ -55,6 +55,7 @@ namespace Api.Migrations
                     Descripcion = table.Column<string>(nullable: true),
                     Agregada = table.Column<DateTime>(nullable: false),
                     EsPerfil = table.Column<bool>(nullable: false),
+                    PublicId = table.Column<string>(nullable: true),
                     UsuarioDocument = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

@@ -30,6 +30,8 @@ namespace Api.Migrations
 
                     b.Property<bool>("EsPerfil");
 
+                    b.Property<string>("PublicId");
+
                     b.Property<string>("Url");
 
                     b.Property<string>("UsuarioDocument");
