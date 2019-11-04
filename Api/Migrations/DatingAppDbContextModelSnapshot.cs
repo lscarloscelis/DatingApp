@@ -19,14 +19,56 @@ namespace Api.Migrations
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
+            modelBuilder.Entity("Api.Models.Foto", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("Agregada");
+
+                    b.Property<string>("Descripcion");
+
+                    b.Property<bool>("EsPerfil");
+
+                    b.Property<string>("Url");
+
+                    b.Property<string>("UsuarioDocument");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsuarioDocument");
+
+                    b.ToTable("Fotos");
+                });
+
             modelBuilder.Entity("Api.Models.Usuario", b =>
                 {
                     b.Property<string>("Document")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Buscando");
+
+                    b.Property<string>("Ciudad");
+
+                    b.Property<string>("ConocidoComo");
+
+                    b.Property<DateTime>("Creado");
+
+                    b.Property<string>("Genero");
+
                     b.Property<byte[]>("Hash");
 
+                    b.Property<string>("Intereses");
+
+                    b.Property<string>("Introduccion");
+
+                    b.Property<DateTime>("Nacimiento");
+
+                    b.Property<string>("Pais");
+
                     b.Property<byte[]>("Salt");
+
+                    b.Property<DateTime>("UltimaActividad");
 
                     b.Property<string>("Username");
 
@@ -45,6 +87,13 @@ namespace Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Valores");
+                });
+
+            modelBuilder.Entity("Api.Models.Foto", b =>
+                {
+                    b.HasOne("Api.Models.Usuario", "Usuario")
+                        .WithMany("Fotos")
+                        .HasForeignKey("UsuarioDocument");
                 });
 #pragma warning restore 612, 618
         }

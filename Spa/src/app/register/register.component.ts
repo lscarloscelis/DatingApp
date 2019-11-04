@@ -12,7 +12,15 @@ export class RegisterComponent implements OnInit {
   toRegister : register = {
     document: '',
     nombre: '',
-    clave: ''
+    clave: '',
+    genero: '',
+    conocidoComo: '',
+    nacimiento: '',
+    introduccion: '',
+    buscando: '',
+    intereses: '',
+    ciudad: '',
+    pais: ''
   };
   constructor(private myService: AuthService) { }
 

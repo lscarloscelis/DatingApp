@@ -83,7 +83,13 @@ namespace Api.Repos.Auth
                 Document = register.Document,
                 Username = register.Nombre,
                 Hash = myHash,
-                Salt = mySalt
+                Salt = mySalt,
+                Genero = register.Genero,
+                ConocidoComo = register.ConocidoComo,
+                Nacimiento = register.Nacimiento,
+                Pais = register.Pais,
+                Creado = DateTime.Now,
+                UltimaActividad = DateTime.Now
             };
             datingAppDbContext.Usuarios.Add(usuario);
             datingAppDbContext.SaveChanges();

@@ -41,18 +41,38 @@
           background-color: white;
           color: #2d7ef7;
         }
+        select {
+          font: small-caps 100%/200% serif;
+        }
 </style>
 <app-nav></app-nav>
 <form #loginForm="ngForm" (ngSubmit)="register(loginForm)" class="form-signin">
     <h1 style="font: small-caps 120%/200% serif;"
         class="h3 mb-3 font-weight-normal">Registro</h1>
-    <input style="font-family: 'Roboto Slab', serif;" name="document" [(ngModel)]="toRegister.document"
+    <input style="font: small-caps 100%/200% serif;" name="document" [(ngModel)]="toRegister.document"
         type="text" class="form-control" placeholder="Documento" required autofocus>
     <hr/>
-    <input style="font-family: 'Roboto Slab', serif;" name="nombre" [(ngModel)]="toRegister.nombre"
+    <input style="font: small-caps 100%/200% serif;" name="nombre" [(ngModel)]="toRegister.nombre"
         type="text" class="form-control" placeholder="Usuario" required>
     <hr/>
-    <input style="font-family: 'Roboto Slab', serif;" name="clave" [(ngModel)]="toRegister.clave"
+    <h1 style="font: small-caps 100%/200% serif;"
+        class="h3 mb-3 font-weight-normal">Genero</h1>
+    <select class="custom-select" name="genero" [(ngModel)]="toRegister.genero">
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+        <option value="No">Prefiero no Decir</option>
+    </select>
+    <hr/>
+    <input style="font: small-caps 100%/200% serif;" name="conocidoComo" [(ngModel)]="toRegister.conocidoComo"
+        type="text" class="form-control" placeholder="Apodo" required>
+    <hr/>
+    <input style="font: small-caps 100%/200% serif;" name="nacimiento" [(ngModel)]="toRegister.nacimiento"
+        type="text" class="form-control" placeholder="Nacimiento" required>
+    <hr/>
+    <input style="font: small-caps 100%/200% serif;" name="pais" [(ngModel)]="toRegister.pais"
+        type="text" class="form-control" placeholder="Pais" required>
+    <hr/>
+    <input style="font: small-caps 100%/200% serif;" name="clave" [(ngModel)]="toRegister.clave"
         type="password" class="form-control" placeholder="Clave" required>
     <hr/>
     <button style="font: small-caps 120%/200% serif;"
